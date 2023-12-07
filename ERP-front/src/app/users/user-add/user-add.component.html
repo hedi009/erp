@@ -1,0 +1,24 @@
+<form [formGroup]="utilisateurForm" (ngSubmit)="ajouterUtilisateur()">
+    <mat-form-field>
+      <input matInput placeholder="First Name" formControlName="nom">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput placeholder="Last Name " formControlName="prenom">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email">
+      <mat-error *ngIf="utilisateurForm.get('email')?.hasError('email')">
+        Email invalide
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Password" formControlName="plainPassword">
+    </mat-form-field>
+  
+    <!-- Ajoutez d'autres champs ici si nécessaire -->
+  
+    <button mat-raised-button  type="submit">Ajouter Utilisateur</button>
+
+  </form>
